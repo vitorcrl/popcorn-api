@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "popcorn-api"
+version = "0.1.0"
+description = ""
+authors = ["Vitor Carlos <vitorcarlos1312@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.112.2"
+uvicorn = "^0.30.6"
+sqlalchemy = "^2.0.33"
+pydantic = "^2.8.2"
+python-dotenv = "^1.0.1"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "uvicorn src:app --reload"
