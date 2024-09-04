@@ -24,7 +24,7 @@ router = APIRouter()
 @router.get("/popcorns/")
 def read_popcorns(skip: int = 0, limit: int = 10):
     logger.info("Rota para leitura de todos os itens")
-    return {"detail": "popcorns"}
+    return {"details": "popcorns"}
 # @router.get("/popcorns/", response_model=List[schemas.popcorn])
 # def read_popcorns(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
 #     logger.info("Rota para leitura de todos os itens")
