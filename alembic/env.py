@@ -57,6 +57,10 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
+    from popcorn.database import Base  # Importa a Base que você já definiu
+    from popcorn.models import  Pipocas, Sabores, PointOfSale, Orders, Production  # Importa os seus modelos
+
+    target_metadata = Base.metadata
     connectable = engine_from_config(
         config.get_section(config.config_ini_section, {}),
         prefix="sqlalchemy.",
