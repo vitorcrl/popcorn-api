@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
-# from ..database import SessionLocal, engine
+from ..database import SessionLocal, engine
+from popcorn.database import SessionLocal
 from popcorn.logger import logger
 
 # models.Base.metadata.create_all(bind=engine)
@@ -9,12 +10,12 @@ from popcorn.logger import logger
 router = APIRouter()
 
 # Dependência para obter a sessão do banco de dados
-# def get_db():
-#     db = SessionLocal()
-#     try:
-#         yield db
-#     finally:
-#         db.close()
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 # @router.post("/popcorns/", response_model=schemas.popcorn)
 # def create_popcorn(popcorn: schemas.popcornCreate, db: Session = Depends(get_db)):
